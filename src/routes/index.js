@@ -1,5 +1,5 @@
 //Este Js se utiliza para agrupar las rutas 
-
+const bootstrap = require('bootstrap');
 const express = require('express');
 const router = express.Router(); // Sirve para crear multiples rutas y mantenerlos por archivos por separado
 
