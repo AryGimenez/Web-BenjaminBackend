@@ -1,53 +1,85 @@
-body {
+
+
+/*
+.page {
+  background: white;
+  max-width: 1280px;
+  margin: 0 auto; 
+} 
+*/
+
+*{ /*resetear los valores predeterminados del navegador web*/
+  box-sizing: border-box; /*para que el espaciado interno y externo ocupen solo un espaciado https://developer.mozilla.org/es/docs/Web/CSS/box-sizing */
+  margin: 0; /*Para que no haya margenes hacia afuera*/
+  padding:0; /*Para que no haya espaciados hacia dentro */
+ 
+
+}
+
+
+body{
+  background:#ffffff;
+  font-family: 'Roboto', sans-serif; 
+  
+
+  width: 90%; /* Toma el anco segun el porsentaje */
+  margin:auto;  
+
+  display:grid;
+  gap: 20px; /* Espacio medianiles https://developer.mozilla.org/en-US/docs/Web/CSS/gap */
+  grid-template-columns: repeat(3, 1fr); /* https://developer.mozilla.org/es/docs/Web/CSS/grid-template-columns */
+  
+}
+nav{           
+  background-color: #ff0000;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    
+}
+
+a{
+  color: black;
+  text-decoration: none; /*para que no me muestra el color azul del link*/
+}
+
+ul{
+  list-style: none; /* se utiliza para sacar el estilo de los Ul para el munu*/
+}
+
+
+/* body {
   background: #ffffff;
   min-height: 900px;
   position: relative;
   background-size: cover;
   font-family: 'Arimo', sans-serif; 
 }
+*/
 
-.page {
-  background: white;
-  max-width: 1280px;
-  margin: 0 auto; 
-}
 
-.navbar-brand {
-  font-size: 30px;
-  font-weight: 600;
-  letter-spacing: 1px; 
-}
-  
-  /*Logo de la empresa */
-.pp-header img {
+
+/* ---- header ---- */
+
+.nav-budiness img {   /*Logo de la empresa */
+
     width: auto;
     height: 70px;
     margin-left: -12px; 
     padding-right: 2px;
 
 }
-  .pp-header h1 {
-    font-weight: 400; 
-  }
-  
-  .pp-header .navbar-nav {
-    letter-spacing: 1px;
-    font-family: 'Arimo', sans-serif;
-    font-size: 18px;
-    font-weight: 400; 
-  }
+
+
+
   
 
 /* Index Section */
 
 .index{
-  width: 90%;
   
   margin: 20px auto;
-  display:grid;
-  background-color: #ff0000;
-  gap: 20px; /* Espacio medianiles https://developer.mozilla.org/en-US/docs/Web/CSS/gap */
-  grid-template-columns: repeat(3, 1fr); /* https://developer.mozilla.org/es/docs/Web/CSS/grid-template-columns */
   
+  background-color: #ff0000;
+
 }
 
