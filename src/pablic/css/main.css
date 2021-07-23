@@ -12,35 +12,22 @@
   box-sizing: border-box; /*para que el espaciado interno y externo ocupen solo un espaciado https://developer.mozilla.org/es/docs/Web/CSS/box-sizing */
   margin: 0; /*Para que no haya margenes hacia afuera*/
   padding:0; /*Para que no haya espaciados hacia dentro */
- 
-
 }
 
 
 body{
-  background:#ffffff;
+  
   font-family: 'Roboto', sans-serif; 
   
 
   width: 90%; /* Toma el anco segun el porsentaje */
   margin:auto;  
 
-  display:grid;
-  gap: 20px; /* Espacio medianiles https://developer.mozilla.org/en-US/docs/Web/CSS/gap */
-  grid-template-columns: repeat(3, 1fr); /* https://developer.mozilla.org/es/docs/Web/CSS/grid-template-columns */
-  
-}
-nav{           
-  background-color: #ff0000;
-    grid-column-start: 1;
-    grid-column-end: 4;
-    
+
 }
 
-a{
-  color: black;
-  text-decoration: none; /*para que no me muestra el color azul del link*/
-}
+
+
 
 ul{
   list-style: none; /* se utiliza para sacar el estilo de los Ul para el munu*/
@@ -60,26 +47,124 @@ ul{
 
 /* ---- header ---- */
 
-.nav-budiness img {   /*Logo de la empresa */
+.nav-main{ /*Menu navegacion*/
+  font-size: 17px;
+  margin-bottom: 10px;  /*Margen inferior */
 
-    width: auto;
-    height: 70px;
-    margin-left: -12px; 
-    padding-right: 2px;
-
-}
-
-
-
+  display: flex; /*Define un contexto flexible para todo sus hijos https://www.eniun.com/flexbox-modelo-caja-flexible-css/*/
+  justify-content: space-between; /*Utiliza todo el ancho disponible https://developer.mozilla.org/es/docs/Web/CSS/justify-content*/
+  align-items: center;
   
-
-/* Index Section */
-
-.index{
-  
-  margin: 20px auto;
-  
+  height: 60px; /*Altura por defecto*/
+  padding:20px 0; /*Pading intenro de 20 px Arriba y baco | 0px asia los lados */
   background-color: #ff0000;
+}
+
+
+/* header .nav-budiness{
+ 
+  justify-content: space-between; /*Utiliza todo el ancho disponible https://developer.mozilla.org/es/docs/Web/CSS/justify-content
+  
+  vertical-align: middle;
+
+  background-color: cadetblue;
+} */
+
+.nav-main img {   /*Logo de la empresa */
+
+  width: 60px; /*Defino el tamanio de el logo */
+  /* height: 70px;
+  margin-left: -12px; 
+  padding-right: 2px; */
+}
+
+
+
+
+
+.nav-main ul { /*Detnro de los ul de la etiqueta nav-main*/
+  display: flex; /*Coloca alado del otro*/
+  background-color: chartreuse; 
+}
+
+.nav-main ul li{ /*Define el comportamiento de los li dentro de Nav-budinss*/
+  padding:10px;
 
 }
+
+
+header a{
+  color: black;
+  text-decoration: none; /*para que no me muestra el color azul del link*/
+}
+
+
+.nav-main ul.nav-menu{/*<?> Para mi es inecesario ya que no hay otra ul en el nav-main*/
+  margin-left: 20px; /*Margen a la izquierda */
+
+} 
+
+.nav-main ul li a:hover { /* <NO anda>*cuando me pociciono en los item de menu*/
+
+  
+  opacity: .6; /*Opacidad */
+
+  
+}
+
+
+
+
+
+
+
+/* -- Index Area de anuncios -- */
+
+
+DIV.ContainerBox{
+  display:grid; /* <?>Asigna la Grilla a este elemento */
+
+  gap: 20px; /* Espacio medianiles https://developer.mozilla.org/en-US/docs/Web/CSS/gap */
+  grid-template-columns: repeat(3, 1fr); /* Divide la rella orizontamente en 3 elomentos https://developer.mozilla.org/es/docs/Web/CSS/grid-template-columns */
+  /* grid-template-rows: repeat(5); */ /*Divide la grilla en 5 elementos horizontal*/
+  background-color: aqua;
+}
+
+DIV.ContainerBox img {
+  
+  width: 100%; 
+  /* height: 180px; /*Altura */
+
+}
+
+/* ---- footer ----- */
+
+
+footer{
+  display: flex; /*Define un contexto flexible para todo sus hijos https://www.eniun.com/flexbox-modelo-caja-flexible-css/*/
+  justify-content: space-between; /*Utiliza todo el ancho disponible https://developer.mozilla.org/es/docs/Web/CSS/justify-content*/
+  align-items: center;
+}
+
+
+@media (max-width: 992px) {
+  DIV.ContainerBox{
+      grid-template-columns: repeat(2, 1fr); /* Divide la rella orizontamente en 3 elomentos https://developer.mozilla.org/es/docs/Web/CSS/grid-template-columns */
+    }
+}
+
+@media (max-width: 992px) {
+  DIV.ContainerBox{
+      grid-template-columns: repeat(2, 1fr); /* Divide la rella orizontamente en 3 elomentos https://developer.mozilla.org/es/docs/Web/CSS/grid-template-columns */
+    }
+}
+
+@media (max-width: 500px){
+  DIV.ContainerBox{
+    grid-template-columns: 1fr; /* Divide la rella orizontamente en 3 elomentos https://developer.mozilla.org/es/docs/Web/CSS/grid-template-columns */
+  }
+}
+  
+
+
 
