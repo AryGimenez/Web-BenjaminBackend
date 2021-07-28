@@ -1,25 +1,18 @@
 
 
-/*
-.page {
-  background: white;
-  max-width: 1280px;
-  margin: 0 auto; 
-} 
-*/
+
 
 *{ /*resetear los valores predeterminados del navegador web*/
   box-sizing: border-box; /*para que el espaciado interno y externo ocupen solo un espaciado https://developer.mozilla.org/es/docs/Web/CSS/box-sizing */
   margin: 0; /*Para que no haya margenes hacia afuera*/
   padding:0; /*Para que no haya espaciados hacia dentro */
+
+  font-family: "Arimo", sans-serif;
 }
 
 
 body{
   
-  font-family: 'Roboto', sans-serif; 
-  
-
   width: 90%; /* Toma el anco segun el porsentaje */
   margin:auto;  
 
@@ -34,48 +27,39 @@ ul{
 }
 
 
-/* body {
-  background: #ffffff;
-  min-height: 900px;
-  position: relative;
-  background-size: cover;
-  font-family: 'Arimo', sans-serif; 
-}
-*/
-
-
 
 /* ---- header ---- */
 
 .nav-main{ /*Menu navegacion*/
   font-size: 17px;
-  margin-bottom: 10px;  /*Margen inferior */
+  margin:10px 0px 20px 0px;  /*Margen inferior */
 
-  display: flex; /*Define un contexto flexible para todo sus hijos https://www.eniun.com/flexbox-modelo-caja-flexible-css/*/
+  display: flex; /*Define un contexto flexible para todo sus hijos 
   justify-content: space-between; /*Utiliza todo el ancho disponible https://developer.mozilla.org/es/docs/Web/CSS/justify-content*/
   align-items: center;
   
   height: 60px; /*Altura por defecto*/
   padding:20px 0; /*Pading intenro de 20 px Arriba y baco | 0px asia los lados */
-  background-color: #ff0000;
+  
 }
 
 
-/* header .nav-budiness{
- 
-  justify-content: space-between; /*Utiliza todo el ancho disponible https://developer.mozilla.org/es/docs/Web/CSS/justify-content
-  
-  vertical-align: middle;
-
-  background-color: cadetblue;
-} */
+.nav-business{
+  display:table; /*Para colocar el H1 alado de el logo */
+}
 
 .nav-main img {   /*Logo de la empresa */
 
-  width: 60px; /*Defino el tamanio de el logo */
-  /* height: 70px;
-  margin-left: -12px; 
-  padding-right: 2px; */
+  width: 70px; /*Defino el tamanio de el logo */
+}
+
+h1{
+  /* display: inline-block;  */
+  
+  display:table-cell; 
+  vertical-align:middle;
+
+  padding-left: 10px;
 }
 
 
@@ -84,7 +68,7 @@ ul{
 
 .nav-main ul { /*Detnro de los ul de la etiqueta nav-main*/
   display: flex; /*Coloca alado del otro*/
-  background-color: chartreuse; 
+ 
 }
 
 .nav-main ul li{ /*Define el comportamiento de los li dentro de Nav-budinss*/
@@ -98,19 +82,32 @@ header a{
   text-decoration: none; /*para que no me muestra el color azul del link*/
 }
 
+.nav-main ul li a:hover { /* <NO anda>*cuando me pociciono en los item de menu*/  
+  opacity: .6; /*Opacidad */ 
+}
 
 .nav-main ul.nav-menu{/*<?> Para mi es inecesario ya que no hay otra ul en el nav-main*/
   margin-left: 20px; /*Margen a la izquierda */
-
 } 
 
-.nav-main ul li a:hover { /* <NO anda>*cuando me pociciono en los item de menu*/
-
+.menu-btn{ 
+  position:absolute;
   
-  opacity: .6; /*Opacidad */
+  top: 20px; /*<?> Tengo dudas que sea la mejora manera de hacerlo */
+  right: 50px;
 
-  
+  z-index: 2;
+  display:none; /*Para que no lo muestre al principio*/
+
 }
+
+/* <F> Se da cuando preciono el .menu-btn*/
+.nav-main ul.nav-menu.show { 
+  /* display:block;     */
+  transform: translateX(-20px);
+}
+
+
 
 
 
@@ -124,10 +121,11 @@ header a{
 DIV.ContainerBox{
   display:grid; /* <?>Asigna la Grilla a este elemento */
 
-  gap: 20px; /* Espacio medianiles https://developer.mozilla.org/en-US/docs/Web/CSS/gap */
+  gap: 30px; /* Espacio medianiles https://developer.mozilla.org/en-US/docs/Web/CSS/gap */
   grid-template-columns: repeat(3, 1fr); /* Divide la rella orizontamente en 3 elomentos https://developer.mozilla.org/es/docs/Web/CSS/grid-template-columns */
   /* grid-template-rows: repeat(5); */ /*Divide la grilla en 5 elementos horizontal*/
-  background-color: aqua;
+
+  padding: 0px 50px 0px 50px;
 }
 
 DIV.ContainerBox img {
@@ -141,11 +139,56 @@ DIV.ContainerBox img {
 
 
 footer{
+  margin: 10px;
   display: flex; /*Define un contexto flexible para todo sus hijos https://www.eniun.com/flexbox-modelo-caja-flexible-css/*/
-  justify-content: space-between; /*Utiliza todo el ancho disponible https://developer.mozilla.org/es/docs/Web/CSS/justify-content*/
+  justify-content: center; /*Utiliza todo el ancho disponible https://developer.mozilla.org/es/docs/Web/CSS/justify-content*/
+ 
   align-items: center;
+  text-align: center !important;
+  vertical-align: middle;
 }
 
+
+footer a {
+
+  margin: 0 10px;
+  text-decoration: none; /*para que no me muestra el color azul del link*/
+  
+  border-radius: 5px; /* https://www.mclibre.org/consultar/amaya/css/css-bordes.html */
+
+} 
+
+footer  a:hover{
+
+
+  opacity: .7;
+  background-color: #2997ff;
+
+  /* border:#89C3C7 2px solid; Lo saco Porque me afecta a la pocicion cambiar el display para que me ande bien  */
+ 
+}
+
+footer  a i:hover{
+  color: #6f7072;
+
+}
+ 
+footer a i {
+  
+  font-size: 1rem;
+  font-weight: 400;
+  color: #212529;
+  background-color: transparent;
+
+
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+  /* transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out; */
+
+
+}
 
 @media (max-width: 992px) {
   DIV.ContainerBox{
@@ -153,11 +196,39 @@ footer{
     }
 }
 
-@media (max-width: 992px) {
-  DIV.ContainerBox{
-      grid-template-columns: repeat(2, 1fr); /* Divide la rella orizontamente en 3 elomentos https://developer.mozilla.org/es/docs/Web/CSS/grid-template-columns */
-    }
+@media (max-width: 710px) {
+  /*Se utiliza para el menú desplegable de navegación*/
+  .nav-main ul.nav-menu{
+    display: none; /*Lo utilizo para, que no me de una animacion brusca al llegar a la resolucion de 710px */
+    position: absolute;
+    top: 0;
+    left : 0;
+    background: #a3a3a3; /*<?> NO me convence*/
+    height: 100%;
+    padding: 60px 10px 10px 10px;
+    opacity: .9;
+    transform: translateX(-400px);
+    transition: transform .5s ease-in-out;
+    
+  }
+
+
+  .nav-main ul.nav-menu li{
+    padding: 20px; /* <F> Agrega un espaciado*/
+    border-bottom: #cccccc solid 1px;
+    font-weight:bold; /* <F>Negrita */
+    font-size: 18px; /*<F> Tamanio de letra*/
+ 
+
+  }
+
+  .menu-btn{
+    display: block; /*Ace aparecer el boton */
+  }
+
 }
+
+
 
 @media (max-width: 500px){
   DIV.ContainerBox{
