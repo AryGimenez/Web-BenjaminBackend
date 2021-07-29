@@ -201,7 +201,7 @@ footer a i {
   .nav-main ul.nav-menu{
     display: none; /*Lo utilizo para, que no me de una animacion brusca al llegar a la resolucion de 710px */
     position: absolute;
-    top: 0;
+    top: 0; 
     left : 0;
     background: #a3a3a3; /*<?> NO me convence*/
     height: 100%;
