@@ -4,7 +4,7 @@ const path = require('path'); // Se utiliza para trabajar con / o contra barra d
 
 
 // Asigna el numero de puerto
-app.set('port', 4000);
+app.set('port', 3001);
 app.engine('html', require('ejs').renderFile); // Se utiliza para poder utilizar los archivos html Prosesadoes por ejs En caso contrario tendrias que usar extencion ejs
 
 app.set('views', path.join(__dirname, 'views')); // retorno la ruta absoluta para las views
