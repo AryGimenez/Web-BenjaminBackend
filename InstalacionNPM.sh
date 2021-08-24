@@ -1,9 +1,11 @@
 npm i express # -- Facilita el codigo de servidr
 npm i ejs # -- motor de plantillas 
 npm i morgan # muestra en consola los log de las peticiones de los usuarios
+
 npm i nodemon -D #-- Es para que escuche los cambios y los refleje en el servidor
 
-npm install --save @fortawesome/fontawesome-free
+npm install --save @fortawesome/fontawesome-free # -- qUE ES 
+
 
 npm i scrollreveal # --Efecto para que aparezca el contenido animadamente https://www.npmjs.com/package/scrollreveal
 
